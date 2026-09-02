@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how Flexbox Pod connects Lagos households with available laundry providers.">
+  <title>How It Works | Flexbox Pod</title>
+  <link rel="stylesheet" href="CSS/brand.css">
+  <style>
+    :root {
+      --ink: #243746;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid rgba(18, 59, 93, 0.12);
+    }
+
+    .nav {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      min-height: 80px;
+      gap: var(--s3);
+    }
+
+    .logo {
+      height: auto;
+      max-width: 170px;
+      width: 100%;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: var(--s3);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: var(--s6) 0 var(--s5);
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin: 0 0 var(--s2);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: var(--s3);
+    }
+
+    .hero-copy {
+      font-size: 1.15rem;
+      margin: 0 auto;
+      max-width: 680px;
+    }
+
+    .section {
+      padding: var(--s5) 0;
+    }
+
+    .section-heading {
+      margin-bottom: var(--s4);
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: var(--s1);
+    }
+
+    .section-heading p {
+      margin: 0 auto;
+      max-width: 650px;
+    }
+
+    .steps {
+      display: grid;
+      gap: var(--s3);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .step-card,
+    .feature-card,
+    .search-card {
+      background: #fff;
+      border: 1px solid rgba(18, 59, 93, 0.1);
+      border-radius: var(--radius);
+      padding: var(--s3);
+    }
+
+    .step-number {
+      align-items: center;
+      background: var(--accent);
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      font-family: var(--display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      height: 48px;
+      justify-content: center;
+      margin-bottom: var(--s2);
+      width: 48px;
+    }
+
+    .step-card h3,
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--s1);
+    }
+
+    .step-card p,
+    .feature-card p {
+      margin: 0;
+    }
+
+    .journey {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .journey h2,
+    .journey h3 {
+      color: #fff;
+    }
+
+    .journey .section-heading p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .journey-grid {
+      align-items: center;
+      display: grid;
+      gap: var(--s5);
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .journey-list {
+      display: grid;
+      gap: var(--s2);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .journey-list li {
+      align-items: flex-start;
+      display: flex;
+      gap: var(--s2);
+    }
+
+    .journey-list strong {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .search-card {
+      color: var(--ink);
+    }
+
+    .search-card h3 {
+      color: var(--brand);
+      margin-bottom: var(--s3);
+    }
+
+    .search-row {
+      border-bottom: 1px solid rgba(18, 59, 93, 0.1);
+      display: flex;
+      justify-content: space-between;
+      gap: var(--s2);
+      padding: var(--s2) 0;
+    }
+
+    .search-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .search-label {
+      color: #637482;
+      font-size: 0.9rem;
+    }
+
+    .search-value {
+      color: var(--brand);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .features {
+      display: grid;
+      gap: var(--s3);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-card {
+      border-top: 4px solid var(--verified);
+    }
+
+    .feature-card:nth-child(2) {
+      border-top-color: var(--muted);
+    }
+
+    .feature-card:nth-child(3) {
+      border-top-color: var(--accent);
+    }
+
+    .cta {
+      padding: var(--s5) 0 var(--s6);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: var(--s2);
+    }
+
+    .cta p {
+      margin: 0 auto var(--s3);
+      max-width: 590px;
+    }
+
+    .button {
+      background: var(--accent);
+      border-radius: var(--radius);
+      color: #fff;
+      display: inline-block;
+      font-weight: 800;
+      padding: 12px 24px;
+      text-decoration: none;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--brand);
+    }
+
+    .site-footer {
+      background: #fff;
+      border-top: 1px solid rgba(18, 59, 93, 0.12);
+      color: #637482;
+      padding: var(--s3) 0;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: var(--s2);
+        padding-top: var(--s2);
+      }
+
+      .nav-links {
+        gap: var(--s2);
+      }
+
+      .hero {
+        padding: var(--s5) 0;
+      }
+
+      .steps,
+      .features,
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-grid {
+        gap: var(--s4);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="index.html" aria-label="Flexbox Pod home">
+        <img class="logo" src="Images/Logo.png" alt="LaundVend - Better laundry, more choices">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#why-flexbox">Why Flexbox Pod</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" id="how-it-works">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>How it works</h2>
+          <p>From choosing a service to receiving clean clothes, LaundVend keeps your laundry journey simple and visible.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Tell us what you need</h3>
+            <p>Enter your pickup location, choose a service such as washing, ironing or folding, and select a convenient pickup time.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Choose your provider</h3>
+            <p>Compare providers who match your location and schedule using availability, pricing, ratings, reviews and verification status.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Receive and track</h3>
+            <p>Schedule your delivery window and follow your order as it moves from awaiting pickup to processing, ready and out for delivery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

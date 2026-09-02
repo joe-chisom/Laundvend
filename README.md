@@ -2,7 +2,7 @@
 
 ## Flexible Laundry Services in Lagos
 
-Flexbox Pod is a proposed local laundry marketplace that connects households in
+LaundVend is a proposed local laundry marketplace that connects households in
 Lagos with laundry providers who are available to accept an order at a
 customer's preferred time.
 
@@ -38,7 +38,7 @@ customers.
 
 ## Proposed Solution
 
-Flexbox Pod explores a laundry marketplace where availability and scheduling are
+LaundVend explores a laundry marketplace where availability and scheduling are
 central to the search experience. Customers could enter their location, select
 a laundry service and choose pickup and delivery windows. The platform would
 then show providers who match those requirements.

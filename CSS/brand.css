@@ -1,0 +1,25 @@
+/* [Flexbox POD] brand sheet — owned by seat 3. Do not edit. */
+:root{
+  /* colour — flat, chosen, no gradients */
+  --brand:    #123B5D;   /* Main brand colour, headings, navigation */
+  --accent:   #18B7B0;   /* Primary accent, buttons, links */
+  --verified: #3FAE68;   /* Availability, verified status, success */
+  --background:#F7F9F7;   /* Main background */
+  --muted:    #F2A65A;   /* Attention, selected time/pickup information */
+  
+
+  /* type — two faces, no more */
+  --display: 'Roboto', Georgia, serif;
+  --body:    'Inter', system-ui, sans-serif;
+
+  /* spacing scale — pick these once, use only these */
+  --s1: 8px;  --s2: 16px; --s3: 24px;
+  --s4: 40px; --s5: 64px; --s6: 96px;
+
+  --radius: 6px;
+  --wrap: 1080px;   /* max page width */
+}
+body{background:var(--background);color:var(--ink);font-family:var(--body);
+     margin:0;line-height:1.6}
+h1,h2,h3{font-family:var(--display);color:var(--brand);margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s3)}

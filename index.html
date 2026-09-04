@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaundVend | Find Available Laundry Vendors</title>
+ <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <img src="images/Logo.jpeg" alt="LaundVend logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="main.html">Find a Vendor</a>
+            <a href="#vendors">Request</a>
+        </nav>
+    </div>
+</header>
+
+<main id="vendors">
+
+    <section class="intro">
+        <p class="small">AVAILABLE LAUNDRY VENDORS</p>
+
+        <h1>Find a laundry vendor who's available when you need them.</h1>
+
+        <p>
+            Compare laundry vendors by location, service, pickup time,
+            price and delivery option before you request.
+        </p>
+    </section>
+
+    <form class="availability-form">
+
+        <div>
+            <label for="area">Where do you need service?</label>
+
+            <select id="area" name="area">
+                <option>All areas</option>
+                <option>Lekki</option>
+                <option>Yaba</option>
+                <option>Ikeja</option>
+                <option>Surulere</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="service">What service do you need?</label>
+
+            <select id="service" name="service">
+                <option>All services</option>
+                <option>Wash &amp; Iron</option>
+                <option>Wash &amp; Fold</option>
+                <option>Ironing</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="time">When should we pick it up?</label>
+
+            <select id="time" name="time">
+                <option>Any time</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+            </select>
+        </div>
+
+        <button type="submit" class="search-button">
+            Search Vendors
+        </button>
+
+    </form>
+
+    <p class="availability-summary">
+        4 vendors available today
+    </p>
+
+    <p class="board-note">
+        Compare pickup times, services, prices and delivery options before you request.
+    </p>
+
+    <h2 class="availability-heading today-heading">
+        Available Today
+    </h2>
+
+    <!-- FreshPress Laundry -->
+    <article class="vendor-card">
+
+        <img
+            src="images/iron.jpeg"
+            alt="FreshPress Laundry"
+            class="vendor-image"
+        >
+
+        <h3>FreshPress Laundry</h3>
+
+        <span class="vendor-status">
+            Available Today
+        </span>
+
+        <div class="vendor-details">
+
+            <p><strong>Location:</strong> Lekki</p>
+
+            <p><strong>Service:</strong> Wash &amp; Iron</p>
+
+            <p><strong>Pickup:</strong> 2:00 PM – 3:00 PM</p>
+
+            <p><strong>Experience:</strong> 4+ years</p>
+
+            <p><strong>Rating:</strong> 4.8/5</p>
+
+            <p><strong>Delivery:</strong> Available</p>
+
+            <p><strong>Verification:</strong> Verified Vendor</p>
+
+        </div>
+
+        <p class="vendor-price">
+            Wash &amp; Iron — From ₦3,000
+        </p>
+
+        <p>
+            Delivery fee: From ₦1,000
+        </p>
+
+        <a href="#" class="vendor-button">
+            Request Vendor
+        </a>
+
+    </article>
+
+
+    <!-- CleanLine Laundry -->
+    <article class="vendor-card">
+
+        <img
+            src="images/Cleaning.jpeg"
+            alt="CleanLine Laundry"
+            class="vendor-image"
+        >
+
+        <h3>CleanLine Laundry</h3>
+
+        <span class="vendor-status">
+            Available Today
+        </span>
+
+        <div class="vendor-details">
+
+            <p><strong>Location:</strong> Yaba</p>
+
+            <p><strong>Service:</strong> Wash &amp; Fold</p>
+
+            <p><strong>Pickup:</strong> 10:00 AM – 12:00 PM</p>
+
+            <p><strong>Experience:</strong> 5+ years</p>
+
+            <p><strong>Rating:</strong> 4.7/5</p>
+
+            <p><strong>Delivery:</strong> Available</p>
+
+            <p><strong>Verification:</strong> Verified Vendor</p>
+
+        </div>
+
+        <p class="vendor-price">
+            Wash &amp; Fold — From ₦2,500
+        </p>
+
+        <p>
+            Delivery fee: From ₦800
+        </p>
+
+        <a href="#" class="vendor-button">
+            Request Vendor
+        </a>
+
+    </article>
+
+
+    <!-- SpinWash Services -->
+    <article class="vendor-card">
+
+        <img
+            src="images/washing.jpeg"
+            alt="SpinWash Services"
+            class="vendor-image"
+        >
+
+        <h3>SpinWash Services</h3>
+
+        <span class="vendor-status">
+            Available Today
+        </span>
+
+        <div class="vendor-details">
+
+            <p><strong>Location:</strong> Ikeja</p>
+
+            <p><strong>Service:</strong> Ironing</p>
+
+            <p><strong>Pickup:</strong> 4:00 PM – 5:00 PM</p>
+
+            <p><strong>Experience:</strong> 3+ years</p>
+
+            <p><strong>Rating:</strong> 4.6/5</p>
+
+            <p><strong>Delivery:</strong> Available</p>
+
+            <p><strong>Verification:</strong> Verified Vendor</p>
+
+        </div>
+
+        <p class="vendor-price">
+            Ironing — From ₦2,000
+        </p>
+
+        <p>
+            Delivery fee: From ₦700
+        </p>
+
+        <a href="#" class="vendor-button">
+            Request Vendor
+        </a>
+
+    </article>
+
+
+    <!-- Sparkle Laundry Hub -->
+    <article class="vendor-card">
+
+        <img
+            src="images/fold.jpeg"
+            alt="Sparkle Laundry Hub"
+            class="vendor-image"
+        >
+
+        <h3>Sparkle Laundry Hub</h3>
+
+        <span class="vendor-status">
+            Available Today
+        </span>
+
+        <div class="vendor-details">
+
+            <p><strong>Location:</strong> Surulere</p>
+
+            <p><strong>Service:</strong> Wash &amp; Fold</p>
+
+            <p><strong>Pickup:</strong> 5:00 PM – 6:00 PM</p>
+
+            <p><strong>Experience:</strong> 6+ years</p>
+
+            <p><strong>Rating:</strong> 4.9/5</p>
+
+            <p><strong>Delivery:</strong> Available</p>
+
+            <p><strong>Verification:</strong> Verified Vendor</p>
+
+        </div>
+
+        <p class="vendor-price">
+            Wash &amp; Fold — From ₦3,500
+        </p>
+
+        <p>
+            Delivery fee: From ₦1,200
+        </p>
+
+        <a href="#" class="vendor-button">
+            Request Vendor
+        </a>
+
+    </article>
+
+
+    <h2 class="availability-heading tomorrow-heading">
+        Available Tomorrow
+    </h2>
+
+
+    <!-- WashRight Laundry -->
+    <article class="vendor-card">
+
+        <img
+            src="images/right.jpeg"
+            alt="WashRight Laundry"
+            class="vendor-image"
+        >
+
+        <h3>WashRight Laundry</h3>
+
+        <span class="vendor-status">
+            Available Tomorrow
+        </span>
+
+        <div class="vendor-details">
+
+            <p><strong>Location:</strong> Lekki</p>
+
+            <p><strong>Service:</strong> Wash &amp; Iron</p>
+
+            <p><strong>Pickup:</strong> 9:00 AM – 10:00 AM</p>
+
+            <p><strong>Experience:</strong> 4+ years</p>
+
+            <p><strong>Rating:</strong> 4.7/5</p>
+
+            <p><strong>Delivery:</strong> Available</p>
+
+            <p><strong>Verification:</strong> Verified Vendor</p>
+
+        </div>
+
+        <p class="vendor-price">
+            Wash &amp; Iron — From ₦3,200
+        </p>
+
+        <p>
+            Delivery fee: From ₦1,000
+        </p>
+
+        <a href="#" class="vendor-button">
+            Request Vendor
+        </a>
+
+    </article>
+
+</main>
+
+</body>
+</html>

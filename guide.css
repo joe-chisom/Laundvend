@@ -1,0 +1,161 @@
+/* Laundvend — brand variables (placeholder — swap for your real brand values) */
+:root{
+  --brand:      #1B5A8C;
+  --brand-dark: #0F3B5E;
+  --accent:     #4FC3D9;
+  --ink:        #14150F;
+  --muted:      #5F6158;
+  --paper:      #F7FAFC;
+  --line:       #E0E6EA;
+
+  --display: 'Fraunces', Georgia, serif;
+  --body:    'Public Sans', system-ui, sans-serif;
+
+  --s1: 8px;  --s2: 16px; --s3: 24px;
+  --s4: 40px; --s5: 64px; --s6: 96px;
+
+  --radius: 6px;
+  --wrap: 1080px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3{
+  font-family: var(--display);
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+.wrap{
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--s3);
+}
+
+/* ---- nav ---- */
+header{
+  border-bottom: 1px solid var(--line);
+  padding: var(--s2) 0;
+}
+header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+header nav .brand-name{
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--brand-dark);
+  font-size: 1.2rem;
+}
+header nav ul{
+  list-style: none;
+  display: flex;
+  gap: var(--s3);
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+header nav a{
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+header nav a:hover,
+header nav a:focus{
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+/* ---- page intro ---- */
+.page-intro{
+  padding: var(--s5) 0 var(--s4);
+}
+.page-intro h1{
+  font-size: 2rem;
+  margin-bottom: var(--s2);
+}
+.page-intro p{
+  color: var(--muted);
+  max-width: 60ch;
+  font-size: 1.05rem;
+}
+
+/* ---- faq ---- */
+main{
+  padding-bottom: var(--s6);
+}
+
+.faq-section{
+  margin-bottom: var(--s5);
+}
+
+.faq-section h2{
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: var(--s1);
+  margin-bottom: var(--s3);
+}
+
+.faq-item{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: var(--s2);
+  background: #fff;
+}
+
+.faq-item summary{
+  cursor: pointer;
+  padding: var(--s3);
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.faq-item summary::-webkit-details-marker{
+  display: none;
+}
+
+.faq-item summary::after{
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after{
+  content: "–";
+}
+
+.faq-item summary:focus-visible{
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.faq-item .faq-answer{
+  padding: 0 var(--s3) var(--s3);
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+footer{
+  border-top: 1px solid var(--line);
+  padding: var(--s3) 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

@@ -192,3 +192,9 @@ a {
   .steps { flex-direction: column; }
   .feature-grid { grid-template-columns: 1fr; }
 }
+center img {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+}

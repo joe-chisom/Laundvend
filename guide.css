@@ -8,7 +8,7 @@
   --paper:      #F7FAFC;
   --line:       #E0E6EA;
 
-  --display: 'Fraunces', Georgia, serif;
+  --display: 'Fraunces', roboto, serif;
   --body:    'Public Sans', system-ui, sans-serif;
 
   --s1: 8px;  --s2: 16px; --s3: 24px;
@@ -21,6 +21,7 @@
 *{ box-sizing: border-box; }
 
 body{
+  font-family: 'Roboto', sans-serif;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body);

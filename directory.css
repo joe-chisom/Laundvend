@@ -5,11 +5,7 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    color: #12304a;
-    background: #f2f6f8;
-    line-height: 1.5;
-}
+    font-family: 'Roboto', sans-serif;
 
 /* =========================
    HEADER

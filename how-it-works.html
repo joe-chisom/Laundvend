@@ -1,98 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn how Flexbox Pod connects Lagos households with available laundry providers.">
-  <title>How It Works | LaundVand</title>
-  <link rel="stylesheet" href="CSS/brand.css">
-  <style>
-    :root {
-      --ink: #243746;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    .steps {
-      display: grid;
-      gap: var(--s3);
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .step-card {
-      background: #fff;
-      border: 1px solid rgba(18, 59, 93, 0.1);
-      border-radius: var(--radius);
-      padding: var(--s3);
-    }
-
-    .step-number {
-      align-items: center;
-      background: var(--accent);
-      border-radius: 50%;
-      color: #fff;
-      display: flex;
-      font-family: var(--display);
-      font-size: 1.4rem;
-      font-weight: 700;
-      height: 48px;
-      justify-content: center;
-      margin-bottom: var(--s2);
-      width: 48px;
-    }
-
-    .step-card h3,
-    .feature-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: var(--s1);
-    }
-
-    .step-card p,
-    .feature-card p {
-      margin: 0;
-    }
-
-    @media (max-width: 760px) {
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="From choosing a pickup window to tracking delivery, see exactly how LaundVend connects Lagos households with available laundry vendors.">
+<meta name="theme-color" content="#12304A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaundVend">
+<meta property="og:title" content="How it works | LaundVend">
+<meta property="og:description" content="From choosing a pickup window to tracking delivery, see exactly how LaundVend connects Lagos households with available laundry vendors.">
+<meta property="og:url" content="https://laundvend.vercel.app/how-it-works.html">
+<meta property="og:image" content="https://laundvend.vercel.app/images/Logo.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://laundvend.vercel.app/how-it-works.html">
+<title>How it works | LaundVend</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+        <path d="M38 10 12 32l26 22" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="m28 26 12 26 18-38" stroke="#20C9C3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand__name">Laund<span>Vend</span></span>
+        <span class="brand__tagline">Better laundry. More choices.</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html" aria-current="page">How it works</a></li>
+      <li><a href="vendors.html">Find a vendor</a></li>
+      <li><a href="guide.html">Guide &amp; FAQ</a></li>
+      <li><a href="problem-statement.html">The problem</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__cta">
+      <a class="btn btn--primary" href="book.html">Book a pickup</a>
+    </div>
+  </div>
+</header>
 
-  <main>
+<main id="main">
 
-    <section class="section" id="how-it-works">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2>How it works</h2>
-          <p>From choosing a service to receiving clean clothes, LaundVend keeps your laundry journey simple and visible.</p>
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h1>From a full basket to clean clothes, without the phone calls.</h1>
+        <p class="lead">
+          LaundVend puts availability first. You start with the time and place
+          that suit you, and only then choose between the vendors who can meet
+          them.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="step">
+          <div class="step__n">1</div>
+          <h2>Choose a location</h2>
+          <p>Enter the area where your clothes should be collected.</p>
+        </article>
+        <article class="step">
+          <div class="step__n">2</div>
+          <h2>Choose a service</h2>
+          <p>Washing, ironing, folding, or a full wash-and-iron service.</p>
+        </article>
+        <article class="step">
+          <div class="step__n">3</div>
+          <h2>Choose a pickup time</h2>
+          <p>Select the collection window that works around your day.</p>
+        </article>
+        <article class="step">
+          <div class="step__n">4</div>
+          <h2>Choose a vendor</h2>
+          <p>Compare availability, pricing, experience, ratings and verification.</p>
+        </article>
+        <article class="step">
+          <div class="step__n">5</div>
+          <h2>Schedule delivery</h2>
+          <p>Say when the clean clothes should come back to you.</p>
+        </article>
+        <article class="step">
+          <div class="step__n">6</div>
+          <h2>Track the order</h2>
+          <p>Follow each stage from awaiting pickup through to delivered.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="tracking">
+    <div class="wrap">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Order stages</p>
+          <h2>You always know where your laundry is.</h2>
         </div>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-number">1</div>
-            <h3>Tell us what you need</h3>
-            <p>Enter your pickup location, choose a service such as washing, ironing or folding, and select a convenient pickup time.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-number">2</div>
-            <h3>Choose your provider</h3>
-            <p>Compare providers who match your location and schedule using availability, pricing, ratings, reviews and verification status.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-number">3</div>
-            <h3>Receive and track</h3>
-            <p>Schedule your delivery window and follow your order as it moves from awaiting pickup to processing, ready and out for delivery.</p>
-          </article>
+        <p class="lead">
+          An order moves through six stages. Each one has a name you can point
+          at, so "where are my clothes?" has a clear answer at any moment.
+        </p>
+      </div>
+
+      <ol class="timeline">
+        <li>
+          <span>Stage 1</span>
+          <strong>Awaiting pickup</strong>
+          <p>The booking is confirmed and the vendor is scheduled to collect.</p>
+        </li>
+        <li>
+          <span>Stage 2</span>
+          <strong>Picked up</strong>
+          <p>Items are counted and logged at collection so nothing is guessed at later.</p>
+        </li>
+        <li>
+          <span>Stage 3</span>
+          <strong>Processing</strong>
+          <p>Clothes are washed, dried, ironed or folded to your instructions.</p>
+        </li>
+        <li>
+          <span>Stage 4</span>
+          <strong>Ready</strong>
+          <p>The order is finished and waiting for its delivery window.</p>
+        </li>
+        <li>
+          <span>Stage 5</span>
+          <strong>Out for delivery</strong>
+          <p>The vendor is on the way back to your address.</p>
+        </li>
+        <li>
+          <span>Stage 6</span>
+          <strong>Delivered</strong>
+          <p>Clothes are returned and you can rate the vendor.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid--2">
+        <div class="panel">
+          <p class="eyebrow">What we show you</p>
+          <h2>The facts behind every listing.</h2>
+          <p class="lead mt-2">
+            Each vendor is described with the same set of details, in the same
+            order, so two listings can be compared at a glance.
+          </p>
+          <div class="flow mt-3">
+            <div class="flow__item"><span>01</span><div><strong>Availability</strong><p>Which pickup windows are open today and tomorrow.</p></div></div>
+            <div class="flow__item"><span>02</span><div><strong>Location</strong><p>The areas a vendor collects from and delivers to.</p></div></div>
+            <div class="flow__item"><span>03</span><div><strong>Trust</strong><p>Verification status, experience, ratings and reviews.</p></div></div>
+            <div class="flow__item"><span>04</span><div><strong>Pricing</strong><p>Starting laundry cost plus the delivery fee, shown together.</p></div></div>
+          </div>
+        </div>
+
+        <div class="panel" id="for-vendors">
+          <p class="eyebrow">For laundry vendors</p>
+          <h2>Show the capacity you already have.</h2>
+          <p class="lead mt-2">
+            A quiet afternoon is lost income. Listing on LaundVend means the
+            hours you are free are the hours customers can see.
+          </p>
+          <ul class="checklist mt-3">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+              <span>Publish the pickup and delivery windows you can actually take.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+              <span>List your services and starting prices once, clearly.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+              <span>Build a public record of ratings, reviews and completed orders.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+              <span>Reach customers in your own area, not across the whole city.</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Start with your pickup time.</h2>
+        <p>Tell us your area and when you are free, and compare the vendors who can meet it.</p>
+        <div class="btn-row">
+          <a class="btn btn--accent" href="vendors.html">Find a vendor</a>
+          <a class="btn btn--ghost" href="guide.html">Guide &amp; FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+            <path d="M38 10 12 32l26 22" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m28 26 12 26 18-38" stroke="#20C9C3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>
+            <span class="brand__name">Laund<span>Vend</span></span>
+            <span class="brand__tagline">Better laundry. More choices.</span>
+          </span>
+        </a>
+        <p class="site-footer__about">
+          LaundVend helps households in Lagos find laundry vendors who are
+          genuinely available at the time they need them.
+        </p>
+      </div>
+
+      <div>
+        <h2>Customers</h2>
+        <ul>
+          <li><a href="vendors.html">Find a vendor</a></li>
+          <li><a href="book.html">Book a pickup</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="guide.html">Guide &amp; FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Vendors</h2>
+        <ul>
+          <li><a href="how-it-works.html#for-vendors">List your service</a></li>
+          <li><a href="how-it-works.html#tracking">Order stages</a></li>
+          <li><a href="guide.html#care">Care standards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="problem-statement.html">The problem</a></li>
+          <li><a href="problem-statement.html#opportunity">Our opportunity</a></li>
+          <li><a href="index.html#coverage">Service areas</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bar">
+      <p>&copy; 2026 LaundVend. Built by Flexbox Pod.</p>
+      <p>A front-end prototype. Vendor listings are illustrative sample data.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

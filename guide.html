@@ -2,132 +2,238 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guide &amp; FAQ — Laundvend</title>
-<link rel="stylesheet" href="guide.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Straight answers on pickup, delivery, turnaround, pricing, care instructions and what happens if something goes wrong.">
+<meta name="theme-color" content="#12304A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaundVend">
+<meta property="og:title" content="Guide &amp; FAQ | LaundVend">
+<meta property="og:description" content="Straight answers on pickup, delivery, turnaround, pricing, care instructions and what happens if something goes wrong.">
+<meta property="og:url" content="https://laundvend.vercel.app/guide.html">
+<meta property="og:image" content="https://laundvend.vercel.app/images/Logo.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://laundvend.vercel.app/guide.html">
+<title>Guide &amp; FAQ | LaundVend</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <nav aria-label="Main navigation">
-      <span class="brand-name">Laundvend</span>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="how-it-works.html">How It Works</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="guide.html" aria-current="page">Guide &amp; FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+        <path d="M38 10 12 32l26 22" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="m28 26 12 26 18-38" stroke="#20C9C3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand__name">Laund<span>Vend</span></span>
+        <span class="brand__tagline">Better laundry. More choices.</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="vendors.html">Find a vendor</a></li>
+      <li><a href="guide.html" aria-current="page">Guide &amp; FAQ</a></li>
+      <li><a href="problem-statement.html">The problem</a></li>
       </ul>
     </nav>
+    <div class="site-header__cta">
+      <a class="btn btn--primary" href="book.html">Book a pickup</a>
+    </div>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <section class="page-intro">
-      <h1>Guide &amp; FAQ</h1>
-      <p>Everything you need to know before you book a pickup — straight answers, no filler.</p>
-    </section>
+<main id="main" class="section section--tight">
+  <div class="wrap wrap--narrow">
 
-    <section class="faq-section" aria-labelledby="general-heading">
-      <h2 id="general-heading">General</h2>
+    <div class="section-head">
+      <p class="eyebrow">Guide &amp; FAQ</p>
+      <h1>Everything worth knowing before you book.</h1>
+      <p class="lead">
+        Short, direct answers on how pickup, delivery, pricing and care work.
+      </p>
+    </div>
 
-      <details class="faq-item">
-        <summary>How does Laundvend work?</summary>
-        <div class="faq-answer">
-          <p>Book a pickup, hand over your laundry, and get it back washed, dried, and folded — no trip to a laundromat, no line to wait in.</p>
-        </div>
-      </details>
+    <h2 id="general" class="faq-group">Getting started</h2>
+    <div class="faq">
+        <details class="faq__item">
+          <summary>How does LaundVend work?</summary>
+          <div class="faq__answer">
+            <p>Choose your area, the service you need and a pickup window. You then compare only the vendors who are available for that time, book one, and hand over your laundry when they arrive.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Which areas do you cover?</summary>
+          <div class="faq__answer">
+            <p>LaundVend is starting in Lekki, Yaba, Ikeja and Surulere. Select your area on the booking form and you will only see vendors who collect and deliver there.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Do I have to create an account?</summary>
+          <div class="faq__answer">
+            <p>No. A booking needs your name, phone number, email and pickup address so the vendor can reach you and find you.</p>
+          </div>
+        </details>
+    </div>
 
-      <details class="faq-item">
-        <summary>What areas do you cover?</summary>
-        <div class="faq-answer">
-          <p>Enter your address when you book — if we cover your area, you'll see available pickup slots right away.</p>
-        </div>
-      </details>
-    </section>
+    <h2 id="pickup" class="faq-group">Pickup &amp; delivery</h2>
+    <div class="faq">
+        <details class="faq__item">
+          <summary>How long does a full cycle take?</summary>
+          <div class="faq__answer">
+            <p>Standard turnaround is 24 to 48 hours from pickup to delivery. Vendors offering a faster window show it on their listing.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Do I need to be home for pickup and delivery?</summary>
+          <div class="faq__answer">
+            <p>No. You can leave the laundry with a gateman, a receptionist or in an agreed spot. Add the details in the care instructions box when you book.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Can I change my pickup time after booking?</summary>
+          <div class="faq__answer">
+            <p>Yes, up to a few hours before the scheduled window. The vendor is notified so the slot can go back into their availability.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>What if a vendor cannot make my window?</summary>
+          <div class="faq__answer">
+            <p>The request goes to other verified vendors in your area who are free at that time. You are never left waiting on one vendor to reply.</p>
+          </div>
+        </details>
+    </div>
 
-    <section class="faq-section" aria-labelledby="pickup-heading">
-      <h2 id="pickup-heading">Pickup &amp; Delivery</h2>
+    <h2 id="care" class="faq-group">Care &amp; trust</h2>
+    <div class="faq">
+        <details class="faq__item">
+          <summary>How do I know a vendor is reliable?</summary>
+          <div class="faq__answer">
+            <p>Every listing shows verification status, years of experience, a rating out of five and customer reviews. Only verified vendors can appear in the results.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>What happens if something is lost or damaged?</summary>
+          <div class="faq__answer">
+            <p>Items are counted and logged at pickup, so an order can be traced rather than guessed at. Anything missing or damaged is raised with the vendor against that record.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Can I ask for a specific detergent or a fragrance-free wash?</summary>
+          <div class="faq__answer">
+            <p>Yes. Add any care instruction when you book, including allergy-friendly, fragrance-free, hand-wash only or do-not-tumble-dry items.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>What should I not send?</summary>
+          <div class="faq__answer">
+            <p>Leather, suede, heavily beaded garments and anything without a care label should be discussed with the vendor first, as standard washing can damage them.</p>
+          </div>
+        </details>
+    </div>
 
-      <details class="faq-item">
-        <summary>How long does a full cycle take?</summary>
-        <div class="faq-answer">
-          <p>Standard turnaround is 24–48 hours from pickup to delivery. Express options are shown at booking if you need it sooner.</p>
-        </div>
-      </details>
+    <h2 id="pricing" class="faq-group">Pricing &amp; payment</h2>
+    <div class="faq">
+        <details class="faq__item">
+          <summary>How is the price worked out?</summary>
+          <div class="faq__answer">
+            <p>Listings show a starting price for a standard load plus the delivery fee. The final amount depends on weight or item count, special-care items and your distance, and is confirmed before pickup.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Why do two vendors charge different amounts?</summary>
+          <div class="faq__answer">
+            <p>Vendors set their own rates based on their service, equipment and area. Showing the laundry price and delivery fee together lets you compare the real total rather than a headline figure.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>When do I pay?</summary>
+          <div class="faq__answer">
+            <p>After the price is confirmed and before the clothes are returned. Nothing is charged for a request that no vendor accepts.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Can I cancel?</summary>
+          <div class="faq__answer">
+            <p>Yes, free of charge any time before pickup. Once your laundry has been collected the order is already in progress and cannot be cancelled.</p>
+          </div>
+        </details>
+    </div>
 
-      <details class="faq-item">
-        <summary>Do I need to be home for pickup and delivery?</summary>
-        <div class="faq-answer">
-          <p>No. You can leave laundry with a doorman, reception, or in an agreed spot — just note it when you book.</p>
-        </div>
-      </details>
+    <div class="panel panel--accent mt-5">
+      <h2>Still have a question?</h2>
+      <p class="mt-2">
+        The <a href="how-it-works.html">how it works</a> page walks through every
+        stage of an order, from awaiting pickup to delivered.
+      </p>
+      <div class="btn-row mt-3">
+        <a class="btn btn--primary" href="book.html">Book a pickup</a>
+      </div>
+    </div>
 
-      <details class="faq-item">
-        <summary>Can I change my pickup time after booking?</summary>
-        <div class="faq-answer">
-          <p>Yes, up to a few hours before the scheduled pickup. Reschedule directly from your booking confirmation.</p>
-        </div>
-      </details>
-    </section>
-
-    <section class="faq-section" aria-labelledby="care-heading">
-      <h2 id="care-heading">Care &amp; Trust</h2>
-
-      <details class="faq-item">
-        <summary>What if something gets lost or damaged?</summary>
-        <div class="faq-answer">
-          <p>Every order is logged item by item at pickup, so any issue can be traced back and resolved directly with you — not guessed at.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can I request specific detergents or a no-fragrance wash?</summary>
-        <div class="faq-answer">
-          <p>Yes — add any care instructions at booking, including allergy-friendly or fragrance-free options.</p>
-        </div>
-      </details>
-    </section>
-
-    <section class="faq-section" aria-labelledby="payment-heading">
-      <h2 id="payment-heading">Payment &amp; Pricing</h2>
-
-      <details class="faq-item">
-        <summary>How is the price worked out?</summary>
-        <div class="faq-answer">
-          <p>Priced by weight or by item, shown clearly before you confirm your booking — no surprise charges at delivery.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>When do I pay?</summary>
-        <div class="faq-answer">
-          <p>Payment is taken online at booking, so there's nothing to sort out at pickup or delivery.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Can I cancel and get a refund?</summary>
-        <div class="faq-answer">
-          <p>Yes, if you cancel before pickup. Once your laundry has been collected, cancellations aren't refunded.</p>
-        </div>
-      </details>
-    </section>
   </div>
 </main>
-
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <p>Laundvend — laundry, picked up and delivered.</p>
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+            <path d="M38 10 12 32l26 22" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m28 26 12 26 18-38" stroke="#20C9C3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>
+            <span class="brand__name">Laund<span>Vend</span></span>
+            <span class="brand__tagline">Better laundry. More choices.</span>
+          </span>
+        </a>
+        <p class="site-footer__about">
+          LaundVend helps households in Lagos find laundry vendors who are
+          genuinely available at the time they need them.
+        </p>
+      </div>
+
+      <div>
+        <h2>Customers</h2>
+        <ul>
+          <li><a href="vendors.html">Find a vendor</a></li>
+          <li><a href="book.html">Book a pickup</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="guide.html">Guide &amp; FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Vendors</h2>
+        <ul>
+          <li><a href="how-it-works.html#for-vendors">List your service</a></li>
+          <li><a href="how-it-works.html#tracking">Order stages</a></li>
+          <li><a href="guide.html#care">Care standards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="problem-statement.html">The problem</a></li>
+          <li><a href="problem-statement.html#opportunity">Our opportunity</a></li>
+          <li><a href="index.html#coverage">Service areas</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bar">
+      <p>&copy; 2026 LaundVend. Built by Flexbox Pod.</p>
+      <p>A front-end prototype. Vendor listings are illustrative sample data.</p>
+    </div>
   </div>
 </footer>
-
 </body>
 </html>

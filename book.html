@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Request a laundry pickup: choose your service, area, pickup window and delivery window, then add your contact details.">
+<meta name="theme-color" content="#12304A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaundVend">
+<meta property="og:title" content="Book a pickup | LaundVend">
+<meta property="og:description" content="Request a laundry pickup: choose your service, area, pickup window and delivery window, then add your contact details.">
+<meta property="og:url" content="https://laundvend.vercel.app/book.html">
+<meta property="og:image" content="https://laundvend.vercel.app/images/Logo.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://laundvend.vercel.app/book.html">
+<title>Book a pickup | LaundVend</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+        <path d="M38 10 12 32l26 22" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="m28 26 12 26 18-38" stroke="#20C9C3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand__name">Laund<span>Vend</span></span>
+        <span class="brand__tagline">Better laundry. More choices.</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="vendors.html">Find a vendor</a></li>
+      <li><a href="guide.html">Guide &amp; FAQ</a></li>
+      <li><a href="problem-statement.html">The problem</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__cta">
+      <a class="btn btn--primary" href="book.html">Book a pickup</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="section section--tight">
+  <div class="wrap">
+
+    <div class="section-head">
+      <p class="eyebrow">Book a pickup</p>
+      <h1>Tell us when you are free. We will match a vendor.</h1>
+      <p class="lead">
+        Choose a service, an area and the windows that suit you. Vendors who can
+        meet all three receive the request, and your booking is confirmed before
+        anyone collects anything.
+      </p>
+    </div>
+
+    <div class="booking">
+
+      <form class="form-card" method="get" action="request-received.html">
+
+        <fieldset class="form-section">
+          <legend class="legend">Laundry details</legend>
+
+          <div class="form-grid">
+            <p class="field full">
+              <label for="service">Service needed</label>
+              <select class="select" id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="wash-iron">Wash &amp; Iron</option>
+                <option value="wash-fold">Wash &amp; Fold</option>
+                <option value="washing">Washing only</option>
+                <option value="ironing">Ironing only</option>
+                <option value="full">Full laundry service</option>
+              </select>
+            </p>
+
+            <p class="field">
+              <label for="area">Pickup area</label>
+              <select class="select" id="area" name="area" required>
+                <option value="">Select an area</option>
+                <option value="lekki">Lekki</option>
+                <option value="yaba">Yaba</option>
+                <option value="ikeja">Ikeja</option>
+                <option value="surulere">Surulere</option>
+              </select>
+            </p>
+
+            <p class="field">
+              <label for="load">Approximate load <span class="hint">(optional)</span></label>
+              <select class="select" id="load" name="load">
+                <option value="">Not sure yet</option>
+                <option value="small">Small - up to 5 kg</option>
+                <option value="medium">Medium - 5 to 10 kg</option>
+                <option value="large">Large - over 10 kg</option>
+              </select>
+            </p>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend class="legend">Pickup and delivery</legend>
+
+          <div class="form-grid">
+            <p class="field">
+              <label for="pickup-date">Pickup date</label>
+              <input class="input" type="date" id="pickup-date" name="pickup-date" required>
+            </p>
+
+            <p class="field">
+              <label for="pickup-time">Pickup window</label>
+              <select class="select" id="pickup-time" name="pickup-time" required>
+                <option value="">Select a window</option>
+                <option value="08-10">8:00 - 10:00 AM</option>
+                <option value="10-12">10:00 AM - 12:00 PM</option>
+                <option value="12-14">12:00 - 2:00 PM</option>
+                <option value="14-16">2:00 - 4:00 PM</option>
+                <option value="16-18">4:00 - 6:00 PM</option>
+                <option value="18-20">6:00 - 8:00 PM</option>
+              </select>
+            </p>
+
+            <p class="field">
+              <label for="delivery-date">Delivery date</label>
+              <input class="input" type="date" id="delivery-date" name="delivery-date" required>
+            </p>
+
+            <p class="field">
+              <label for="delivery-time">Delivery window</label>
+              <select class="select" id="delivery-time" name="delivery-time" required>
+                <option value="">Select a window</option>
+                <option value="08-10">8:00 - 10:00 AM</option>
+                <option value="10-12">10:00 AM - 12:00 PM</option>
+                <option value="12-14">12:00 - 2:00 PM</option>
+                <option value="14-16">2:00 - 4:00 PM</option>
+                <option value="16-18">4:00 - 6:00 PM</option>
+                <option value="18-20">6:00 - 8:00 PM</option>
+              </select>
+            </p>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend class="legend">Your details</legend>
+
+          <div class="form-grid">
+            <p class="field">
+              <label for="first-name">First name</label>
+              <input class="input" type="text" id="first-name" name="first-name"
+                     autocomplete="given-name" placeholder="Ada" required>
+            </p>
+
+            <p class="field">
+              <label for="last-name">Last name</label>
+              <input class="input" type="text" id="last-name" name="last-name"
+                     autocomplete="family-name" placeholder="Okoye" required>
+            </p>
+
+            <p class="field">
+              <label for="email">Email address</label>
+              <input class="input" type="email" id="email" name="email"
+                     autocomplete="email" placeholder="you@example.com" required>
+            </p>
+
+            <p class="field">
+              <label for="phone">Phone number</label>
+              <input class="input" type="tel" id="phone" name="phone"
+                     autocomplete="tel" inputmode="tel" placeholder="+234 800 000 0000" required>
+            </p>
+
+            <p class="field full">
+              <label for="address">Pickup address</label>
+              <input class="input" type="text" id="address" name="address"
+                     autocomplete="street-address" placeholder="Street, building and landmark" required>
+            </p>
+
+            <p class="field full">
+              <label for="notes">Care instructions <span class="hint">(optional)</span></label>
+              <textarea class="textarea" id="notes" name="notes"
+                        placeholder="Delicates, no fragrance, items that must not be tumble dried, gate or reception details."></textarea>
+            </p>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend class="sr-only">Confirmation</legend>
+          <p class="consent">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">
+              I confirm the details above are correct and understand that the
+              request is subject to a vendor accepting the pickup window.
+            </label>
+          </p>
+        </fieldset>
+
+        <div class="form-actions">
+          <p class="meta">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            Your details are used only to arrange this booking.
+          </p>
+          <button class="btn btn--primary" type="submit">Request booking</button>
+        </div>
+      </form>
+
+      <aside class="aside-card">
+        <h2>What happens next</h2>
+        <ul class="checklist">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <span>Verified vendors in your area who are free in that window see your request.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <span>You receive the vendor's name, rating and the full price including delivery.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <span>Nothing is collected until you confirm, and the price is agreed before pickup.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+            <span>Items are counted and logged at pickup, so any issue can be traced.</span>
+          </li>
+        </ul>
+
+        <hr>
+
+        <p class="meta">
+          Would rather choose the vendor yourself?
+          <a href="vendors.html">Browse who is available</a>.
+        </p>
+      </aside>
+
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+            <path d="M38 10 12 32l26 22" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m28 26 12 26 18-38" stroke="#20C9C3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>
+            <span class="brand__name">Laund<span>Vend</span></span>
+            <span class="brand__tagline">Better laundry. More choices.</span>
+          </span>
+        </a>
+        <p class="site-footer__about">
+          LaundVend helps households in Lagos find laundry vendors who are
+          genuinely available at the time they need them.
+        </p>
+      </div>
+
+      <div>
+        <h2>Customers</h2>
+        <ul>
+          <li><a href="vendors.html">Find a vendor</a></li>
+          <li><a href="book.html">Book a pickup</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="guide.html">Guide &amp; FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Vendors</h2>
+        <ul>
+          <li><a href="how-it-works.html#for-vendors">List your service</a></li>
+          <li><a href="how-it-works.html#tracking">Order stages</a></li>
+          <li><a href="guide.html#care">Care standards</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="problem-statement.html">The problem</a></li>
+          <li><a href="problem-statement.html#opportunity">Our opportunity</a></li>
+          <li><a href="index.html#coverage">Service areas</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bar">
+      <p>&copy; 2026 LaundVend. Built by Flexbox Pod.</p>
+      <p>A front-end prototype. Vendor listings are illustrative sample data.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

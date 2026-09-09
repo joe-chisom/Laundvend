@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /request-received.html
+
+Sitemap: https://laundvend.vercel.app/sitemap.xml

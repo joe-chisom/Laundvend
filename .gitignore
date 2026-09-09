@@ -1,0 +1,11 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Dependency and build output (none used today, kept for safety)
+node_modules/
+dist/
+.vercel/

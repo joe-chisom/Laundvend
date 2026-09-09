@@ -1,0 +1,512 @@
+/* ==========================================================================
+   LaundVend — Brand sheet
+   Design tokens, reset and base elements. No component or page rules here.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Brand palette (from the LaundVend logo) */
+  --brand:        #12304A;  /* filled surfaces only — always pairs with #fff */
+  --brand-strong: #0B2138;
+
+  --accent:       #20C9C3;  /* fills, borders, large shapes only */
+  --accent-ink:   #0B7B76;  /* accent used as TEXT — passes AA on light */
+  --accent-soft:  #E4F8F7;
+
+  --verified:     #3FAE68;
+  --verified-ink: #256B41;
+  --verified-soft:#E7F6ED;
+
+  --highlight:    #F2A65A;  /* pickup / time emphasis */
+  --highlight-ink:#7C4A10;
+  --highlight-soft:#FDF1E3;
+
+  /* Neutrals — surfaces and text */
+  --bg:        #F3F7F9;
+  --surface:   #FFFFFF;
+  --surface-2: #F8FBFC;
+  --ink:       #12304A;  /* headings          — 13.2:1 on --surface */
+  --ink-body:  #45606F;  /* body copy         —  6.7:1 on --surface */
+  --ink-muted: #5A6E80;  /* meta, captions    —  5.3:1 on --surface */
+  --line:      #DCE6EC;
+  --line-soft: #EAF0F4;
+
+  /* Type — two faces, no more */
+  --display: "Roboto", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --body:    "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Spacing scale — use only these */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 40px;
+  --s5: 64px;
+  --s6: 96px;
+
+  /* Radii */
+  --radius-sm:  8px;
+  --radius:     12px;
+  --radius-lg:  20px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(18, 48, 74, .06), 0 2px 8px rgba(18, 48, 74, .05);
+  --shadow-2: 0 2px 4px rgba(18, 48, 74, .06), 0 12px 28px rgba(18, 48, 74, .10);
+  --shadow-3: 0 24px 60px rgba(18, 48, 74, .16);
+
+  /* Layout */
+  --wrap: 1120px;
+  --gutter: var(--s3);
+
+  --focus: 0 0 0 3px var(--surface), 0 0 0 6px var(--accent-ink);
+
+  color-scheme: light dark;
+}
+
+/* Dark colour scheme — only the tokens change, never the rules below. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0B1A28;
+    --surface:   #122536;
+    --surface-2: #162B3E;
+    --ink:       #EAF3F8;
+    --ink-body:  #B4C7D4;
+    --ink-muted: #8CA3B4;
+    --line:      #22394D;
+    --line-soft: #1B3042;
+
+    --brand:        #1D4468;  /* lifted so it separates from the dark page */
+    --brand-strong: #27577F;
+
+    --accent-ink:   #6FE0DB;
+    --accent-soft:  #10333C;
+    --verified-ink: #7BD79B;
+    --verified-soft:#123024;
+    --highlight-ink:#F0B77A;
+    --highlight-soft:#33240F;
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, .30);
+    --shadow-2: 0 12px 28px rgba(0, 0, 0, .38);
+    --shadow-3: 0 24px 60px rgba(0, 0, 0, .48);
+
+    --focus: 0 0 0 3px var(--surface), 0 0 0 6px var(--accent-ink);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink-body);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.65;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Honour a reduced-motion preference everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Base elements
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 1.4rem + 3vw, 3.4rem);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.35rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--accent-ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+ul,
+ol {
+  padding-left: 1.15em;
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+hr {
+  background: var(--line);
+  border: 0;
+  height: 1px;
+  margin: var(--s4) 0;
+}
+
+/* One visible focus treatment for the whole site. */
+:focus-visible {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--focus);
+  outline: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0B2138;
+}
+
+/* --------------------------------------------------------------------------
+   4. Layout primitives
+   -------------------------------------------------------------------------- */
+
+.wrap {
+  margin-inline: auto;
+  max-width: var(--wrap);
+  padding-inline: var(--gutter);
+  width: 100%;
+}
+
+.wrap--narrow {
+  max-width: 760px;
+}
+
+.section {
+  padding-block: clamp(var(--s5), 7vw, var(--s6));
+}
+
+.section--tight {
+  padding-block: clamp(var(--s4), 5vw, var(--s5));
+}
+
+.section--surface {
+  background: var(--surface);
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Keyboard-only shortcut past the header. */
+.skip-link {
+  background: var(--brand);
+  border-radius: 0 0 var(--radius) 0;
+  color: #fff;
+  font-weight: 600;
+  left: 0;
+  padding: var(--s2) var(--s3);
+  position: absolute;
+  top: 0;
+  transform: translateY(-120%);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  color: #fff;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   5. Primitives — eyebrow, lead, buttons, chips
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  color: var(--accent-ink);
+  font-family: var(--display);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  margin-bottom: var(--s2);
+  text-transform: uppercase;
+}
+
+.lead {
+  color: var(--ink-body);
+  font-size: clamp(1.02rem, .98rem + .35vw, 1.18rem);
+  max-width: 62ch;
+}
+
+.meta {
+  color: var(--ink-muted);
+  font-size: .875rem;
+}
+
+.btn {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--display);
+  font-size: .95rem;
+  font-weight: 700;
+  gap: var(--s1);
+  justify-content: center;
+  line-height: 1;
+  padding: 15px var(--s3);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .18s ease, border-color .18s ease,
+              color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--brand);
+  box-shadow: var(--shadow-1);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--brand-strong);
+  box-shadow: var(--shadow-2);
+  color: #fff;
+}
+
+.btn--accent {
+  background: var(--accent);
+  color: #0B2138;
+}
+
+.btn--accent:hover {
+  background: #16B4AE;
+  color: #0B2138;
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  background: var(--surface);
+  border-color: var(--ink-muted);
+  color: var(--ink);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+/* Status chips — the site's core signal (availability, trust, price). */
+.chip {
+  align-items: center;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  font-family: var(--display);
+  font-size: .78rem;
+  font-weight: 700;
+  gap: 6px;
+  letter-spacing: .01em;
+  line-height: 1;
+  padding: 7px 12px;
+  white-space: nowrap;
+}
+
+.chip::before {
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  width: 7px;
+}
+
+.chip--today {
+  background: var(--verified-soft);
+  color: var(--verified-ink);
+}
+
+.chip--today::before {
+  background: var(--verified);
+}
+
+.chip--tomorrow {
+  background: var(--highlight-soft);
+  color: var(--highlight-ink);
+}
+
+.chip--tomorrow::before {
+  background: var(--highlight);
+}
+
+/* --------------------------------------------------------------------------
+   6. Form controls
+   -------------------------------------------------------------------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field > label,
+.legend {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.hint {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.input,
+.select,
+.textarea {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  padding: 13px 14px;
+  transition: border-color .16s ease, box-shadow .16s ease;
+  width: 100%;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--ink-muted);
+}
+
+.input:hover,
+.select:hover,
+.textarea:hover {
+  border-color: var(--ink-muted);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--accent-ink);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Native arrow removed so the control matches across browsers. */
+.select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 20px center, right 14px center;
+  background-repeat: no-repeat;
+  background-size: 6px 6px, 6px 6px;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. Spacing utilities
+   Small, named steps from the scale so no page needs an inline style.
+   -------------------------------------------------------------------------- */
+
+.mt-2 { margin-top: var(--s2); }
+.mt-3 { margin-top: var(--s3); }
+.mt-5 { margin-top: var(--s5); }
+.mb-5 { margin-bottom: var(--s5); }
+.center-block { margin-inline: auto; }

@@ -1,0 +1,1268 @@
+/* ==========================================================================
+   LaundVend — Site sheet
+   Header, footer and the components each page is built from.
+   Requires brand.css to be loaded first.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Header + navigation
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header__inner {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+  justify-content: space-between;
+  min-height: 72px;
+  padding-block: var(--s2);
+}
+
+.brand {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand__mark {
+  height: 34px;
+  width: 34px;
+}
+
+.brand__name {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+
+.brand__name span {
+  color: var(--accent-ink);
+}
+
+.brand__tagline {
+  color: var(--ink-muted);
+  display: block;
+  font-family: var(--display);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  flex: 1 1 auto;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__list a {
+  border-radius: var(--radius-pill);
+  color: var(--ink-body);
+  display: block;
+  font-family: var(--display);
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 9px 14px;
+  text-decoration: none;
+  transition: background-color .16s ease, color .16s ease;
+  white-space: nowrap;
+}
+
+.site-nav__list a:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.site-nav__list a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+.site-header__cta {
+  flex-shrink: 0;
+}
+
+/* Narrow screens: the nav becomes a full-width scrollable row rather than a
+   menu that needs scripting to open. */
+@media (max-width: 1040px) {
+  .site-header__inner {
+    justify-content: space-between;
+    padding-block: 12px;
+  }
+
+  .site-nav {
+    flex: 1 0 100%;
+    margin-inline: calc(var(--gutter) * -1);
+    order: 3;
+    overflow-x: auto;
+    padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav__list {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .site-header__cta .btn {
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand__tagline {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  background:
+    radial-gradient(1100px 460px at 12% -8%, var(--accent-soft), transparent 62%),
+    var(--bg);
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+  padding-block: clamp(var(--s5), 6vw, var(--s6));
+}
+
+.hero__grid {
+  align-items: center;
+  display: grid;
+  gap: clamp(var(--s4), 5vw, var(--s5));
+  grid-template-columns: 1.05fr .95fr;
+}
+
+.hero h1 span {
+  color: var(--accent-ink);
+}
+
+.hero .lead {
+  margin-top: var(--s3);
+}
+
+.hero .btn-row {
+  margin-top: var(--s4);
+}
+
+.hero__proof {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s4);
+  list-style: none;
+  margin: var(--s4) 0 0;
+  padding: var(--s3) 0 0;
+}
+
+.hero__proof li {
+  color: var(--ink-body);
+  font-size: .9rem;
+}
+
+.hero__proof strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Match card — the static illustration of an availability search
+   -------------------------------------------------------------------------- */
+
+.match {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+  overflow: hidden;
+}
+
+.match__head {
+  align-items: center;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  justify-content: space-between;
+  padding: 14px var(--s3);
+}
+
+.match__head span:first-child {
+  font-family: var(--display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.match__status {
+  align-items: center;
+  background: rgba(63, 174, 104, .18);
+  border-radius: var(--radius-pill);
+  color: #9BE7B8;
+  display: inline-flex;
+  font-size: .72rem;
+  font-weight: 700;
+  gap: 6px;
+  letter-spacing: .06em;
+  padding: 5px 11px;
+  text-transform: uppercase;
+}
+
+.match__status::before {
+  background: #6EDC96;
+  border-radius: 50%;
+  content: "";
+  height: 6px;
+  width: 6px;
+}
+
+.match__fields {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 1fr 1fr;
+  background: var(--line-soft);
+}
+
+.match__field {
+  background: var(--surface);
+  padding: var(--s3);
+}
+
+.match__field small {
+  color: var(--ink-muted);
+  display: block;
+  font-family: var(--display);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.match__field strong {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.match__result {
+  align-items: center;
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: var(--s2);
+  padding: var(--s3);
+}
+
+.match__avatar {
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 46px;
+  object-fit: cover;
+  width: 46px;
+}
+
+.match__result div {
+  min-width: 0;
+}
+
+.match__result strong {
+  display: block;
+  font-family: var(--display);
+}
+
+.match__price {
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 900;
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.match__price small {
+  color: var(--ink-muted);
+  display: block;
+  font-weight: 400;
+}
+
+@media (max-width: 460px) {
+  .match__fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Section headings
+   -------------------------------------------------------------------------- */
+
+.section-head {
+  margin-bottom: var(--s4);
+  max-width: 62ch;
+}
+
+.section-head p {
+  margin-top: var(--s2);
+}
+
+
+.section-head--split {
+  align-items: end;
+  display: grid;
+  gap: var(--s3);
+  grid-template-columns: 1.2fr 1fr;
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  .section-head--split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Card grids
+   -------------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--s3);
+}
+
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 980px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  height: 100%;
+  padding: var(--s3);
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow-2);
+  transform: translateY(-3px);
+}
+
+.card :is(h2, h3) {
+  font-size: 1.15rem;
+  margin-bottom: var(--s1);
+}
+
+.card p {
+  color: var(--ink-body);
+  font-size: .94rem;
+}
+
+.card__icon {
+  align-items: center;
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  color: var(--accent-ink);
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  margin-bottom: var(--s2);
+  width: 44px;
+}
+
+.card__icon svg {
+  height: 22px;
+  width: 22px;
+}
+
+/* Numbered step card */
+.step {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  height: 100%;
+  padding: var(--s3);
+  position: relative;
+}
+
+.step__n {
+  align-items: center;
+  background: var(--brand);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 900;
+  height: 40px;
+  justify-content: center;
+  margin-bottom: var(--s2);
+  width: 40px;
+}
+
+.step :is(h2, h3) {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.step p {
+  color: var(--ink-body);
+  font-size: .94rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Vendor cards
+   -------------------------------------------------------------------------- */
+
+.vendor-grid {
+  display: grid;
+  gap: var(--s3);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.vendor {
+  background: var(--surface);
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.vendor:hover {
+  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow-2);
+  transform: translateY(-3px);
+}
+
+.vendor__media {
+  aspect-ratio: 16 / 10;
+  background: var(--surface-2);
+  object-fit: cover;
+  width: 100%;
+}
+
+.vendor__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s3);
+}
+
+/* Availability sits on the photo so the vendor name gets the full width. */
+.vendor__badge {
+  box-shadow: var(--shadow-1);
+  left: 12px;
+  position: absolute;
+  top: 12px;
+}
+
+.vendor__top h3 {
+  font-size: 1.1rem;
+}
+
+.vendor__where {
+  color: var(--ink-muted);
+  font-size: .85rem;
+  margin-top: 2px;
+}
+
+.vendor__specs {
+  border-top: 1px solid var(--line-soft);
+  display: grid;
+  gap: 10px var(--s2);
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding-top: var(--s2);
+}
+
+.vendor__specs dt {
+  color: var(--ink-muted);
+  font-family: var(--display);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.vendor__specs dd {
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 500;
+  margin: 2px 0 0;
+}
+
+.vendor__foot {
+  align-items: center;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--s2);
+}
+
+.vendor__price {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+.vendor__price small {
+  color: var(--ink-muted);
+  display: block;
+  font-size: .76rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Trust line: rating + verification */
+.trust {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px var(--s2);
+  font-size: .85rem;
+}
+
+.trust__rating {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  font-weight: 600;
+  gap: 5px;
+}
+
+.trust__rating svg {
+  color: var(--highlight);
+  height: 15px;
+  width: 15px;
+}
+
+.trust__verified {
+  align-items: center;
+  color: var(--verified-ink);
+  display: inline-flex;
+  font-weight: 600;
+  gap: 5px;
+}
+
+.trust__verified svg {
+  height: 15px;
+  width: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Availability filter panel
+   -------------------------------------------------------------------------- */
+
+.filters {
+  background: var(--brand);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2);
+  padding: var(--s3);
+}
+
+.filters__legend {
+  color: #fff;
+  font-family: var(--display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  margin-bottom: var(--s2);
+  text-transform: uppercase;
+}
+
+.filters__row {
+  display: grid;
+  gap: var(--s2);
+  grid-template-columns: repeat(3, 1fr) auto;
+  align-items: end;
+}
+
+.filters .field > label {
+  color: #C9DDEA;
+}
+
+.filters .select {
+  background-color: var(--surface);
+  border-color: transparent;
+}
+
+@media (max-width: 860px) {
+  .filters__row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters__row .btn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .filters__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.results-bar {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
+  justify-content: space-between;
+  margin-block: var(--s4) var(--s3);
+}
+
+.results-bar h2 {
+  font-size: 1.3rem;
+}
+
+.group-head {
+  align-items: center;
+  display: flex;
+  gap: var(--s2);
+  margin-block: var(--s5) var(--s3);
+}
+
+.group-head:first-of-type {
+  margin-top: var(--s3);
+}
+
+.group-head h2 {
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+.group-head::after {
+  background: var(--line);
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Timeline (order journey)
+   -------------------------------------------------------------------------- */
+
+.timeline {
+  display: grid;
+  gap: var(--s3);
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  border-top: 3px solid var(--line);
+  padding-top: var(--s2);
+  position: relative;
+}
+
+.timeline li::before {
+  background: var(--accent);
+  border-radius: 50%;
+  content: "";
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: -7px;
+  width: 11px;
+}
+
+.timeline strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.02rem;
+  margin-bottom: 4px;
+}
+
+.timeline span {
+  color: var(--ink-muted);
+  font-family: var(--display);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.timeline p {
+  color: var(--ink-body);
+  font-size: .92rem;
+}
+
+@media (max-width: 860px) {
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .timeline { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   9. Feature panel / callout / CTA band
+   -------------------------------------------------------------------------- */
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--s3), 4vw, var(--s4));
+}
+
+.panel--accent {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.note {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--ink-body);
+  font-size: .9rem;
+  padding: var(--s2) var(--s3);
+}
+
+.cta-band {
+  background:
+    radial-gradient(700px 320px at 85% 10%, rgba(32, 201, 195, .28), transparent 70%),
+    #0B2138;
+  border-radius: var(--radius-lg);
+  color: #C9DDEA;
+  padding: clamp(var(--s4), 6vw, var(--s5));
+  text-align: center;
+}
+
+.cta-band h2 {
+  color: #fff;
+  margin-inline: auto;
+  max-width: 20ch;
+}
+
+.cta-band p {
+  color: #C9DDEA;
+  margin: var(--s3) auto 0;
+  max-width: 56ch;
+}
+
+.cta-band .btn-row {
+  justify-content: center;
+  margin-top: var(--s4);
+}
+
+.cta-band .btn--ghost {
+  border-color: rgba(255, 255, 255, .35);
+  color: #fff;
+}
+
+.cta-band .btn--ghost:hover {
+  background: rgba(255, 255, 255, .1);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   10. Problem-statement page pieces
+   -------------------------------------------------------------------------- */
+
+.flow {
+  counter-reset: flow;
+  display: grid;
+  gap: var(--s2);
+}
+
+.flow__item {
+  align-items: baseline;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  gap: var(--s2);
+  grid-template-columns: 34px 1fr;
+  padding: var(--s2) var(--s3);
+}
+
+.flow__item span {
+  color: var(--accent-ink);
+  font-family: var(--display);
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.flow__item strong {
+  display: block;
+}
+
+.flow__item p {
+  color: var(--ink-muted);
+  font-size: .9rem;
+}
+
+.stat-row {
+  display: grid;
+  gap: var(--s3);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--s3);
+}
+
+.stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+}
+
+.stat span {
+  color: var(--ink-muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 720px) {
+  .stat-row { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   11. FAQ
+   -------------------------------------------------------------------------- */
+
+.faq {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.faq__item {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.faq__item:last-child {
+  border-bottom: 0;
+}
+
+.faq__item > summary {
+  align-items: center;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  gap: var(--s2);
+  justify-content: space-between;
+  list-style: none;
+  padding: var(--s3);
+  transition: background-color .16s ease;
+}
+
+.faq__item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item > summary:hover {
+  background: var(--surface-2);
+}
+
+.faq__item > summary::after {
+  border-bottom: 2px solid var(--accent-ink);
+  border-right: 2px solid var(--accent-ink);
+  content: "";
+  flex-shrink: 0;
+  height: 9px;
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+  width: 9px;
+}
+
+.faq__item[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.faq__item[open] > summary {
+  background: var(--surface-2);
+}
+
+.faq__answer {
+  color: var(--ink-body);
+  padding: 0 var(--s3) var(--s3);
+}
+
+.faq__answer p + p {
+  margin-top: var(--s2);
+}
+
+/* --------------------------------------------------------------------------
+   12. Booking form layout
+   -------------------------------------------------------------------------- */
+
+.booking {
+  align-items: start;
+  display: grid;
+  gap: var(--s4);
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: clamp(var(--s3), 4vw, var(--s4));
+}
+
+.form-section + .form-section {
+  border-top: 1px solid var(--line-soft);
+  margin-top: var(--s4);
+  padding-top: var(--s4);
+}
+
+/* Floating the legend takes it out of the fieldset's special box model, where
+   it is anchored across the top border and had a rule drawn through the text. */
+.form-section > .legend {
+  display: block;
+  float: left;
+  font-size: 1.05rem;
+  margin-bottom: var(--s3);
+  padding: 0;
+  width: 100%;
+}
+
+/* A grid container establishes its own formatting context and would otherwise
+   sit beside the floated legend rather than under it. */
+.form-section > :not(.legend) {
+  clear: both;
+}
+
+.form-section::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.form-grid {
+  display: grid;
+  gap: var(--s3);
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 620px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+.consent {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+}
+
+.consent input {
+  accent-color: var(--accent-ink);
+  flex-shrink: 0;
+  height: 24px;
+  margin-top: 1px;
+  width: 24px;
+}
+
+.consent label {
+  color: var(--ink-body);
+  font-size: .92rem;
+}
+
+.form-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+  justify-content: space-between;
+  margin-top: var(--s4);
+}
+
+.form-actions .meta {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+}
+
+.aside-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--s3);
+  position: sticky;
+  top: 104px;
+}
+
+.aside-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: var(--s2);
+}
+
+.checklist {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist li {
+  color: var(--ink-body);
+  display: grid;
+  font-size: .92rem;
+  gap: 10px;
+  grid-template-columns: 18px 1fr;
+}
+
+.checklist svg {
+  color: var(--verified-ink);
+  height: 18px;
+  margin-top: 3px;
+  width: 18px;
+}
+
+@media (max-width: 940px) {
+  .booking { grid-template-columns: 1fr; }
+
+  .aside-card { position: static; }
+}
+
+/* --------------------------------------------------------------------------
+   13. Confirmation / 404
+   -------------------------------------------------------------------------- */
+
+.state {
+  margin-inline: auto;
+  max-width: 640px;
+  padding-block: clamp(var(--s5), 8vw, var(--s6));
+  text-align: center;
+}
+
+.state__icon {
+  align-items: center;
+  background: var(--verified-soft);
+  border-radius: 50%;
+  color: var(--verified-ink);
+  display: inline-flex;
+  height: 76px;
+  justify-content: center;
+  margin-bottom: var(--s3);
+  width: 76px;
+}
+
+.state__icon svg {
+  height: 36px;
+  width: 36px;
+}
+
+.state .btn-row {
+  justify-content: center;
+  margin-top: var(--s4);
+}
+
+.state .note {
+  margin-top: var(--s4);
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   14. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  background: #0B2138;
+  color: #9FB6C7;
+  margin-top: var(--s6);
+  padding-block: var(--s5) var(--s3);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--s4);
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+}
+
+.site-footer .brand {
+  color: #fff;
+}
+
+.site-footer .brand__tagline {
+  color: #7F98AB;
+}
+
+.site-footer__about {
+  color: #9FB6C7;
+  font-size: .92rem;
+  margin-top: var(--s2);
+  max-width: 34ch;
+}
+
+.site-footer h2 {
+  color: #fff;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  margin-bottom: var(--s2);
+  text-transform: uppercase;
+}
+
+.site-footer ul {
+  display: grid;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Padding brings each footer link to a 24px+ tap target (WCAG 2.5.8). */
+.site-footer ul a {
+  display: inline-block;
+  padding-block: 5px;
+}
+
+.site-footer a {
+  color: #9FB6C7;
+  font-size: .92rem;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.site-footer__bar {
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  justify-content: space-between;
+  margin-top: var(--s5);
+  padding-top: var(--s3);
+}
+
+.site-footer__bar p {
+  color: #7F98AB;
+  font-size: .85rem;
+}
+
+@media (max-width: 900px) {
+  .site-footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .site-footer__grid { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   15. Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .cta-band,
+  .skip-link,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .card,
+  .vendor,
+  .panel {
+    border: 1px solid #999;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* FAQ group heading — smaller than a page title so the two do not compete. */
+.faq-group {
+  font-size: 1.4rem;
+  margin: var(--s5) 0 var(--s2);
+}
+
+.faq-group:first-of-type {
+  margin-top: var(--s4);
+}

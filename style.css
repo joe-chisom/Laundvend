@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f5f7f8;
+  color: #12304a;
+  line-height: 1.5;
+}
+
+/* form {
+  background-image: url("LaundVend Logo.jpg"); 
+  background-size: contain;
+} */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 720px;
+  background: #fff;
+  border: 1px solid #e3e8ec;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(23, 33, 43, 0.08);
+  overflow: hidden;
+}
+
+.header {
+  padding: 32px 36px 24px;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.image {
+  float: right;
+}
+.eyebrow {
+  margin: 0 0 6px;
+  color: #20C9C3;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 34px);
+  letter-spacing: -0.03em;
+}
+
+
+.intro {
+  margin: 8px 0 0;
+  color: #65717c;
+}
+
+form {
+  padding: 32px 36px 36px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #cfd7dd;
+  border-radius: 9px;
+  padding: 12px 13px;
+  background: #fff;
+  color: #17212b;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #287a63;
+  box-shadow: 0 0 0 3px rgba(40, 122, 99, 0.12);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.hint {
+  color: #7a858e;
+  font-size: 12px;
+}
+
+.confirmation {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  padding: 14px;
+  background: #f7faf9;
+  border: 1px solid #dcebe5;
+  border-radius: 10px;
+  color: #4d5b65;
+  font-size: 13px;
+}
+
+.confirmation input {
+  width: auto;
+  margin-top: 3px;
+  accent-color: #287a63;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 6px;
+}
+
+.secure {
+  color: #68747e;
+  font-size: 12px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 22px;
+  background: #12304a;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+button:hover {
+  background: #20C9C3;
+
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.success {
+  display: none;
+  margin: 24px 36px 36px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #edf8f3;
+  border: 1px solid #cce8dc;
+  color: #245b4b;
+}
+
+.success strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .booking-card {
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .header,
+  form {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
